@@ -1,0 +1,141 @@
+body {
+  text-align: center;
+  font-size: 1em;
+  font-family: verdana;
+  margin: 0;
+}
+h1 {
+  font-size: 1.2em;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0 0 30px 0;
+  color: #333;
+}
+
+/* rows */
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.filled {
+  color: green;
+  background-color: orange;
+  animation: flip 0.5s ease forwards;
+}
+
+.row > div {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #bbb;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+  /* color: green;
+  background-color: orange; */
+}
+
+.letterGuess {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #bbb;
+  margin: auto;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+/* keypad Letters */
+
+.keypad {
+  max-width: 500px;
+  margin: 20px auto;
+}
+.keypad > div {
+  margin: 5px;
+  width: 40px;
+  height: 50px;
+  background: #eee;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+}
+
+.keypad > div:hover {
+  background: #bbb;
+
+}
+
+.keypad > div.green {
+  background: #5ac85a;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > div.red {
+  background: red;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > div.grey {
+  background: #a1a1a1;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+.BtnEnter, .BtnTryAgain, .BtnReplay{
+  margin: 5px;
+  width: fit-content;
+  padding: 0px 10px;
+  height: 50px;
+  background: yellowgreen;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+}
+
+.BtnEnter:hover, .BtnTryAgain:hover, .BtnReplay:hover {
+  background: green;
+}
+
+.BtnBackspace{
+  margin: 5px;
+  width: fit-content;
+  padding: 0px 10px;
+  height: 50px;
+  background: lightgray;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+}
+
+.BtnBackspace:hover {
+  background: grey;
+}
+
+/* Animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+    color: white;
+    background-color: white;
+  }
+  45% {
+    transform: rotateX(90deg);
+    color: white;
+    background-color: white;
+  }
+  55% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
