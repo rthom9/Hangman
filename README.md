@@ -24,15 +24,9 @@ npm run start
 ```
 
 ## Game Demo:
+Users are presented empty letter boxes corresponding to the length of the solution word.
+<img src="/demo_screenshots/demo1.png" width="500"/>
 
-<div>
-    <figure>
-        <img src="/demo_screenshots/demo1.png" width="500"/>
-        <figcaption>
-            Users are presented empty letter boxes corresponding to the length of the solution word.
-        </figcaption>
-    </figure>
-</div>
 <br></br>
 <div>
     <figure>
