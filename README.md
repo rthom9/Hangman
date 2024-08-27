@@ -25,19 +25,16 @@ npm run start
 
 ## Game Demo:
 
-<img src="/demo_screenshots/demo1.png"/>
+
 
 Users are presented empty letter boxes corresponding to the length of the solution word.
-![alt text](</demo_screenshots/demo1.png>)
+<img src="/demo_screenshots/demo1.png"/>
 If users guess correctly, letter boxes are filled appropriately. Turns remaining is unchanged.
-![alt text](/demo_screenshots/demo2.png)
+<img src="/demo_screenshots/demo2.png"/>
 If users guess incorrectly, the corresponding keypad letters are turned red, turns are decremented, and the hangman diagram is progressed.
-![alt text](/demo_screenshots/demo5.png)
-![alt text](/demo_screenshots/demo4.png)
-![alt text](/demo_screenshots/demo6.png)
-![alt text](/demo_screenshots/demo7.png)
+<img src="/demo_screenshots/demo5.png"/>
 If the user guesses all letters or submits an answer before using all turns, they are presented with a congratulations and option to "Replay" with a new random word.
-![alt text](/demo_screenshots/demo8.png)
+<img src="/demo_screenshots/demo8.png"/>
 
 If the user uses all turns or submits an incorrect answer, they are presented with the correct answer and the option to "Try Again".
-![alt text](/demo_screenshots/demo9.png)
+<img src="/demo_screenshots/demo9.png"/>
