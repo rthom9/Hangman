@@ -26,7 +26,7 @@ npm run start
 ## Game Demo:
 
 <div align="center">
-    <figure>
+    <figure align="center">
         <img src="/demo_screenshots/demo1.png" width="500"/>
         <figcaption>Users are presented empty letter boxes corresponding to the length of the solution word.</figcaption>
     </figure>
