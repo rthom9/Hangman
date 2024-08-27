@@ -18,12 +18,12 @@ const useHangman = (solution) => {
                 setGuessArray(guessArray)
             }
         }
-
         // guessArray will list current correct guesses
         return guessArray
     }
 
     const addNewGuess = (formatted) => {
+        let guessCorrect = false;
         if (formatted.join("") === solution){
             setIsCorrect(true)
             console.log("You won!")
@@ -33,19 +33,25 @@ const useHangman = (solution) => {
             return [...prevHistory, currentGuess]
         })
 
-        setTurn((prevTurn) => {
-            return prevTurn + 1
-        })
-
         setUsedKeys((prevKeys) => {
             let solutionArray = [...solution]
             prevKeys[currentGuess] = "red"
             for (let i = 0; i < solution.length; i++) {
                 if (solutionArray[i] === currentGuess) {
                     prevKeys[currentGuess] = "green";
+                    guessCorrect = true;
                 }
             }
             return prevKeys
+        })
+
+        setTurn((prevTurn) => {
+            if (guessCorrect) {
+                return prevTurn
+            } else {
+                return prevTurn + 1
+            }
+            
         })
 
         // Clear previous guess once entered
@@ -54,7 +60,7 @@ const useHangman = (solution) => {
 
     const handleKeyUp = ( {key} ) => {
         if (key === "Enter") {
-            if (turn > 11) {
+            if (turn > 10) {
                 console.log("All guesses used.")
                 return
             }
@@ -82,7 +88,8 @@ const useHangman = (solution) => {
         const key = btn.innerText
 
         if (key === "Enter") {
-            if (turn > 11) {
+            if (turn > 10
+            ) {
                 console.log("All guesses used.")
                 return
             }

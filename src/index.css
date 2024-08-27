@@ -1,15 +1,24 @@
 body {
   text-align: center;
+  display: flex;
+  justify-content: center;
   font-size: 1em;
-  font-family: verdana;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
 }
 h1 {
-  font-size: 1.2em;
+  font-size: 2em;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   margin: 0 0 30px 0;
   color: #333;
+}
+
+.flex-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* rows */
@@ -22,7 +31,7 @@ h1 {
 .filled {
   color: green;
   background-color: orange;
-  animation: flip 0.5s ease forwards;
+  animation: bounce-fade-in 1.2s ease-in-out;
 }
 
 .row > div {
@@ -45,12 +54,18 @@ h1 {
   width: 60px;
   height: 60px;
   border: 1px solid #bbb;
+  box-shadow: 10px 5px 5px lightgreen;
   margin: auto;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
+}
+
+/* Answer Form */
+.answer-form label {
+  margin: 0 5px;
 }
 
 /* keypad Letters */
@@ -120,22 +135,131 @@ h1 {
   background: grey;
 }
 
+/* Hangman Diagram */
+
+.hangman-diagram {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 50px;
+  border:#333 solid 
+}
+
+/* Gallows Parts */
+.gallows-base {
+  width: 120px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+}
+
+.gallows-pole {
+  width: 10px;
+  height: 280px;
+  background-color: black;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+
+.gallows-top-bar {
+  width: 110px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+.gallows-rope {
+  width: 2px;
+  height: 50px;
+  background-color: black;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+}
+
+/* Stick Figure Parts */
+.head {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid black;
+  position: absolute;
+  top: 60px;
+  left: 130px;
+}
+
+.body {
+  width: 2px;
+  height: 80px;
+  background-color: black;
+  position: absolute;
+  top: 105px;
+  left: 150px;
+}
+
+.left-leg, .right-leg {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 210px;
+}
+
+.left-leg {
+  transform: rotate(-75deg);
+  left: 120px;
+}
+
+.right-leg {
+  transform: rotate(60deg);
+  left: 140px;
+}
+
+.left-arm, .right-arm {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 140px;
+}
+
+.left-arm {
+  transform: rotate(-45deg);
+  left: 108px;
+}
+
+.right-arm {
+  transform: rotate(45deg);
+  left: 145px;
+}
+
+
 /* Animations */
-@keyframes flip {
+@keyframes bounce-fade-in {
   0% {
-    transform: rotateX(0);
-    color: white;
-    background-color: white;
+    opacity: 0;
+    transform: translateY(0) scale(1);
   }
-  45% {
-    transform: rotateX(90deg);
-    color: white;
-    background-color: white;
+  20% {
+    opacity: 1;
+    transform: translateY(-30px) scale(1.2);
   }
-  55% {
-    transform: rotateX(90deg);
+  40% {
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  80% {
+    transform: translateY(0) scale(1);
   }
   100% {
-    transform: rotateX(0);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

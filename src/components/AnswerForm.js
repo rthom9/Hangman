@@ -25,9 +25,12 @@ export default function MyForm({solution, setIsCorrect, setTurn}) {
     }
   
     return (
-      <form method="post" onSubmit={handleSubmit}>
+      <form className="answer-form" method="post" onSubmit={handleSubmit}>
         <label>
-          Ready to answer? <input name="myInput"/>
+          Ready to answer? <input name="myInput" type="text"/>
+        </label>
+        <label>
+          <input type="submit"/>
         </label>
       </form>
     );

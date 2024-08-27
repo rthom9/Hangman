@@ -5,6 +5,7 @@ import AnswerForm from './AnswerForm'
 import Keypad from './Keypad'
 import Btn from './Btn'
 import LetterGuess from './LetterGuess'
+import HangmanDiagram from './HangmanDiagram'
 
 export default function Hangman({solution}) {
     const { currentGuess, handleKeyUp, isCorrect, turn, guessArray, usedKeys, handleOnClick, setIsCorrect, setTurn } = useHangman(solution)
@@ -25,26 +26,34 @@ export default function Hangman({solution}) {
         }
         //cleanup function, avoids have +++ keyup event listeners each time reloads
         return () => window.removeEventListener('keyup', handleKeyUp)
-    }, [handleKeyUp, isCorrect, turn])
+        }, [handleKeyUp, isCorrect, turn])
 
     // If user still in game. 
-    if (!isCorrect && turn < 11) {
+    if (!isCorrect && turn < 10) {
       return (
         <div>
-          <br></br>
           <Row guessArray={guessArray}/>
-          <br></br>
-          <div>Select or Type Your Guess:</div>
-          <br></br>
-          <LetterGuess currentGuess={currentGuess}/>
-          <br></br>
-          <div>Turns Remaining: {11 - turn}</div>
-          <br></br>
-          <AnswerForm solution={solution} setIsCorrect={setIsCorrect} setTurn={setTurn}/>
-          <br></br>
-          <Keypad usedKeys={usedKeys} handleOnClick={handleOnClick}/>
-          <Btn handleOnClick={handleOnClick} label="Enter"/>
-          <Btn handleOnClick={handleOnClick} label="Backspace"/>
+            <div className="flex-container">
+              <br></br>
+              <div>
+                <HangmanDiagram turn={turn} />
+              </div>
+              <div>
+                
+                <br></br>
+                <div><h3>Select or Type Your Guess:</h3></div>
+                <br></br>
+                <LetterGuess currentGuess={currentGuess}/>
+                <br></br>
+                <div>Turns Remaining: {10 - turn}</div>
+                <br></br>
+                <AnswerForm solution={solution} setIsCorrect={setIsCorrect} setTurn={setTurn}/>
+                <br></br>
+                <Keypad usedKeys={usedKeys} handleOnClick={handleOnClick}/>
+                <Btn handleOnClick={handleOnClick} label="Enter"/>
+                <Btn handleOnClick={handleOnClick} label="Backspace"/>
+              </div>
+            </div>
         </div>
       )
     // If user successfully guessed solution.
