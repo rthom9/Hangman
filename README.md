@@ -26,40 +26,19 @@ npm run start
 ## Game Demo:
 Users are presented empty letter boxes corresponding to the length of the solution word.
 <img src="/demo_screenshots/demo1.png" width="500"/>
+<br></br>
 
+If users guess correctly, letter boxes are filled appropriately. Turns remaining is unchanged.
+<img src="/demo_screenshots/demo2.png" width="500"/>
 <br></br>
-<div>
-    <figure>
-        <img src="/demo_screenshots/demo2.png" width="500"/>
-        <figcaption>
-            If users guess correctly, letter boxes are filled appropriately. Turns remaining is unchanged.
-        </figcaption>
-    </figure>
-</div>
+
+If users guess incorrectly, the corresponding keypad letters are turned red, turns are decremented, and the hangman diagram is progressed.
+<img src="/demo_screenshots/demo5.png" width="500"/>
 <br></br>
-<div>
-    <figure>
-        <img src="/demo_screenshots/demo5.png" width="500"/>
-        <figcaption>
-            If users guess incorrectly, the corresponding keypad letters are turned red, turns are decremented, and the hangman diagram is progressed.
-        </figcaption>
-    </figure>
-</div>
+
+If the user guesses all letters or submits an answer before using all turns, they are presented with a congratulations and option to "Replay" with a new random word.
+<img src="/demo_screenshots/demo8.png" width="500"/>
 <br></br>
-<div>
-    <figure>
-        <img src="/demo_screenshots/demo8.png" width="500"/>
-        <figcaption>
-            If the user guesses all letters or submits an answer before using all turns, they are presented with a congratulations and option to "Replay" with a new random word.
-        </figcaption>
-    </figure>
-</div>
-<br></br>
-<div>
-    <figure>
-        <img src="/demo_screenshots/demo9.png" width="500"/>
-        <figcaption>
-            If the user uses all turns or submits an incorrect answer, they are presented with the correct answer and the option to "Try Again".
-        </figcaption>
-    </figure>
-</div>
+
+If the user uses all turns or submits an incorrect answer, they are presented with the correct answer and the option to "Try Again".
+<img src="/demo_screenshots/demo9.png" width="500"/>
