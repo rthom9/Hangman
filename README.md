@@ -26,7 +26,7 @@ npm run start
 ## Game Demo:
 
 <figure>
-    <img src="/demo_screenshots/demo1.png"/>
+    <img src="/demo_screenshots/demo1.png" width="150"/>
     <figcaption>Users are presented empty letter boxes corresponding to the length of the solution word.</figcaption>
 </figure>
 If users guess correctly, letter boxes are filled appropriately. Turns remaining is unchanged.
