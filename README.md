@@ -1,71 +1,42 @@
-# Getting Started with Create React App
+# Hangman Word Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+This hangman application allows a user to play the traditional hangman word game. In this game, users guess the letters present in an unknown word. An incorrect guess brings the stick figure closer to being “hanged”, with 10 incorrect guesses resulting in an unsuccessful play. Users can input letter guesses using either keyboard inputs or by clicking the displayed keypad. Correct letter guesses are displayed in their respective positions in the word display. The color of the corresponding keypad letter is updated to green or red to reflect a correct or incorrect guess respectively. At any time during the game, a user may guess the complete word.
 
-In the project directory, you can run:
+## Technologies Used:
 
-### `npm start`
+This project uses the React framework. A local JSON server is used to provide random solution words from a solutions word list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to Install and Play:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+Start a JSON server on PORT: 3001
+```bash
+json-server ./data/db_words.json --port 3001 
+```
+Start development server, running project can be viewed at http://localhost:3000
+```bash
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Game Demo:
 
-### `npm run build`
+<img src="/demo_screenshots/demo1.png/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# hangman" 
+Users are presented empty letter boxes corresponding to the length of the solution word.
+![alt text](</demo_screenshots/demo1.png>)
+If users guess correctly, letter boxes are filled appropriately. Turns remaining is unchanged.
+![alt text](/demo_screenshots/demo2.png)
+If users guess incorrectly, the corresponding keypad letters are turned red, turns are decremented, and the hangman diagram is progressed.
+![alt text](/demo_screenshots/demo5.png)
+![alt text](/demo_screenshots/demo4.png)
+![alt text](/demo_screenshots/demo6.png)
+![alt text](/demo_screenshots/demo7.png)
+If the user guesses all letters or submits an answer before using all turns, they are presented with a congratulations and option to "Replay" with a new random word.
+![alt text](/demo_screenshots/demo8.png)
+If the user uses all turns or submits an incorrect answer, they are presented with the correct answer and the option to "Try Again".
+![alt text](/demo_screenshots/demo9.png)
