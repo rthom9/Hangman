@@ -82,10 +82,13 @@ h1 {
   display: inline-block;
   border-radius: 6px;
   line-height: 50px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .keypad > div:hover {
   background: #bbb;
+  transform: scale(1.1);
 
 }
 
@@ -118,6 +121,7 @@ h1 {
 
 .BtnEnter:hover, .BtnTryAgain:hover, .BtnReplay:hover {
   background: green;
+  cursor: pointer;
 }
 
 .BtnBackspace{
@@ -129,6 +133,7 @@ h1 {
   display: inline-block;
   border-radius: 6px;
   line-height: 50px;
+  cursor: pointer;
 }
 
 .BtnBackspace:hover {
